@@ -1,5 +1,3 @@
-let friends = ['Pedro', 'Jessi', 'Bidaux', 'Morellas', 'Demel', 'Koi', 'Alex', 'Kryvin', 'Xana', 'Nitblit'];
-
 document.addEventListener('DOMContentLoaded', function () {
     //Creates the containers
     let main = document.getElementById('DOM-section');
@@ -133,7 +131,6 @@ function newAlert(element) {
 function newAlertText(element) {
     let msg = document.getElementById('textInputDOM').value;
     let alert = newElementClassText('div', 'alert alert-info', msg);
-    console.log(msg);
     alert.role = 'alert';
 
     element.appendChild(alert);
@@ -153,49 +150,4 @@ function listOfFriends() {
         element = newElementText('li', friends[i]);
         list.appendChild(element);
     }
-}
-
-//=============== Utility Functions ==================
-
-//Creates a new element given the type
-function newElement(newElementType) {
-    let element = document.createElement(newElementType);
-
-    return element;
-}
-
-//Creates a new element given the type and the class
-function newElementClass(newElementType, newElementClass) {
-    let element = document.createElement(newElementType);
-
-    element.className = newElementClass;
-
-    return element;
-}
-
-//Creates a new element given the type, the class and the text
-function newElementClassText(newElementType, newElementClass, newElementText) {
-    let element = document.createElement(newElementType);
-    let elementText = document.createTextNode(newElementText);
-
-    element.className = newElementClass;
-
-    element.appendChild(elementText);
-
-    return element;
-}
-
-function newElementText(newElementType, newElementText) {
-    let element = document.createElement(newElementType);
-    let elementText = document.createTextNode(newElementText);
-
-    element.appendChild(elementText);
-
-    return element;
-}
-
-function randColor() {
-    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    let rbgValue = "#" + randomColor;
-    return rbgValue;
 }
